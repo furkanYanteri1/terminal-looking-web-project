@@ -1,7 +1,6 @@
 {
-  "name": "codebyte.re",
   "version": "1.0.0",
-  "description": "codebytere's personal website",
+  "description": "furkanyanteri's personal website",
   "main": "js/cli.js",
   "scripts": {
     "dev": "http-server -o",
@@ -10,14 +9,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/codebytere/codebytere.github.io.git"
+    "url": "https://github.com/furkanYanteri1/terminal-looking-web-project"
   },
   "author": "Shelley Vohr <shelley.vohr@gmail.com>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/codebytere/codebytere.github.io/issues"
-  },
-  "homepage": "https://github.com/codebytere/codebytere.github.io#readme",
+  "homepage": "https://github.com/furkanYanteri1/terminal-looking-web-project#readme",
   "devDependencies": {
     "http-server": "^14.1.1",
     "prettier": "^2.0.2"
