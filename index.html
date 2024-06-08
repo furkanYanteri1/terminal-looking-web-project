@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,34 +11,36 @@
     <script type="text/javascript" src="src/cli.js"></script>
     <link rel="icon" href="https://avatars.githubusercontent.com/u/59139373?v=4" type="image/png">
     <title>Furkan Yanteri</title>
-  </head>
-  
-  <body>
-  
-  <div class="terminal-window">
-    <header>
-      <div class="button red"></div>
-      <div class="button yellow"></div>
-      <div class="button green"></div>
-    </header>
-    <div id="terminal">
-      <p><span class="green">\[._.]/</span> - you're in furkanyanteri's cli! type `help` to get started..</p>
-        <p class="hidden">
-          <span class="prompt">
-            <span class="root">root</span>
-            <span class="tick">❯</span>
-          </span>
-          <span contenteditable="true" class="input" spellcheck="false"></span>
-        </p>
+</head>
+<body>
+    <div class="matrix"></div>
+    <div class="content">
+        <div class="terminal-window">
+            <header>
+                <div class="button red"></div>
+                <div class="button yellow"></div>
+                <div class="button green"></div>
+            </header>
+            <div id="terminal">
+                <p><span class="green">\[._.]/</span> - you're in furkanyanteri's cli! type `help` to get started..</p>
+                <p class="hidden">
+                    <span class="prompt">
+                        <span class="root">root</span>
+                        <span class="tick">❯</span>
+                    </span>
+                    <span contenteditable="true" class="input" spellcheck="false"></span>
+                </p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p> Furkan Yanteri 2024</p>
+            <p> Made with ❤ and coffee</p>
+            <br>
+            <br>
+            <p style="font-size:x-small; color: gray;"> Thanks to Shelley Vohr</p>
+        </div>
     </div>
-  </div>
-  
-  <div class="footer">
-    <p> Furkan Yanteri 2024</p>
-    <p> Made with ❤ and coffee</p>
-    <br>
-    <br>
-    <p style="font-size:x-small; color: gray;"> Thanks to Shelley Vohr</p>
-  </div>
-  
-  </body>
+    <script src="src/matrix.js"></script>
+</body>
+</html>
