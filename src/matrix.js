@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
     function createTextNode(letter) {
         const span = document.createElement('span');
         span.textContent = letter;
+        if (Math.random() > 0.8) { // 20% chance of glowing effect
+            span.classList.add('glow');
+        }
         return span;
     }
 
@@ -29,5 +32,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    setInterval(draw, 10); // Reduce the interval time for faster animation
+    setInterval(draw, 50); // Reduce the interval time for faster animation
 });
