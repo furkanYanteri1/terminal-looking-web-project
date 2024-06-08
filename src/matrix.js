@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const matrixDiv = document.querySelector('.matrix');
-    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%';
+    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをんアイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
     const fontSize = 16;
     const columns = Math.floor(window.innerWidth / fontSize);
     const drops = Array(columns).fill(1);
