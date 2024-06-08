@@ -1,4 +1,6 @@
-document.addEventListener('DOMContentLoaded', () => {
+let animationInterval;
+
+function startMatrixAnimation() {
     const matrixDiv = document.querySelector('.matrix');
     const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをんアイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
     const fontSize = 16;
@@ -44,5 +46,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    setInterval(draw, 25); // Reduce the interval time for faster animation
-});
+    animationInterval = setInterval(draw, 25); // Reduce the interval time for faster animation
+}
+
+function stopMatrixAnimation() {
+    console.log('Stopping matrix animation...');
+    clearInterval(animationInterval);
+    const matrixDiv = document.querySelector('.matrix');
+    matrixDiv.innerHTML = '';
+}
+
+// Exporting the functions for use in other files
+window.startMatrixAnimation = startMatrixAnimation;
+window.stopMatrixAnimation = stopMatrixAnimation;
