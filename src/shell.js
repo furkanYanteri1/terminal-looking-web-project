@@ -1,6 +1,7 @@
 class Shell {
   constructor(term, commands) {
       this.commands = commands;
+      this.animationRunning = false; // Track if animation is running
       this.setupListeners(term);
       this.term = term;
 
@@ -76,22 +77,34 @@ class Shell {
           }
       });
 
-      term.addEventListener('keypress', (evt) => {
+      term.addEventListener('keypress', async (evt) => {
           // Exclude these keys for Firefox, as they're fired for arrow/tab keypresses.
           if (![9, 27, 37, 38, 39, 40].includes(evt.keyCode)) {
               // If input keys are pressed then resetHistoryIndex() is called.
               this.resetHistoryIndex();
-          }
-          if (evt.keyCode === 13) { // Enter key
-              console.log('Enter key pressed, starting matrix animation...');
-              window.startMatrixAnimation();
-              setTimeout(window.stopMatrixAnimation, 2000); // Stop animation after 1 second
 
+              // Start the animation if it is not already running
+              if (!this.animationRunning) {
+                  window.startMatrixAnimation();
+                  this.animationRunning = true;
+              }
+          }
+
+          if (evt.keyCode === 13) { // Enter key
+              console.log('Enter key pressed, executing command...');
+              
               const prompt = evt.target;
               const input = prompt.textContent.trim().split(' ');
               const cmd = input[0].toLowerCase();
               const args = input[1];
 
+              setTimeout(() => {
+              // Stop the animation
+              window.stopMatrixAnimation();
+              this.animationRunning = false;
+            }, 800); // when enter pressed, keep animating a bit before terminating
+
+              // Execute the command
               if (cmd === 'clear') {
                   this.updateHistory(cmd);
                   this.clearConsole();
@@ -103,6 +116,7 @@ class Shell {
                   this.term.innerHTML += 'Error: command not recognized';
                   this.resetPrompt(term, prompt);
               }
+
               evt.preventDefault();
           }
       });
